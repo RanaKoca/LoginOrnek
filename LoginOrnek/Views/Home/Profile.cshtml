@@ -1,0 +1,23 @@
+﻿@model LoginOrnek.Models.Entities.User
+@{
+    ViewData["Title"] = "Profile";
+
+}
+
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">Kullanıcı Bilgileri</h5>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><b>Ad:</b> @Model.Ad</p>
+                    <p class="card-text"><b>Soyad:</b> @Model.Soyad</p>
+                    <p class="card-text"><b>Kullanıcı Adı:</b> @Model.Username</p>
+                    <p class="card-text"><b>Yetki Turu:</b> @Model.YetkiTuru</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

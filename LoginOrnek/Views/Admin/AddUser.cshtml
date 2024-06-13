@@ -1,0 +1,25 @@
+﻿@model Hasta
+<form id="userForm" asp-action="AddUser" method="post">
+    <div class="form-group">
+        <label asp-for="Ad"></label>
+        <input asp-for="Ad" class="form-control" required/>
+    </div>
+    <div class="form-group">
+        <label asp-for="Soyad"></label>
+        <input asp-for="Soyad" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="IlacAdi"></label>
+        <input asp-for="IlacAdi" class="form-control" /> 
+    </div>
+    <div class="form-group">
+        <label asp-for="KullaniciAdi">Kullanıcı Adı</label>
+        <input asp-for="KullaniciAdi" class="form-control" required />
+    </div>
+    <div class="form-group">
+        <label asp-for="Sifre">Şifre</label>
+        <input asp-for="Sifre" class="form-control" required />
+    </div>
+    <hr>
+        <button type="submit" class="btn btn-primary">Kullanıcı Ekle</button>
+</form>

@@ -1,0 +1,28 @@
+﻿@model Hasta
+
+<form method="post" action="/Admin/EditUserUpdatemmod/@Model">
+    <div class="form-group">
+        <input asp-for="id" class="form-control" type="hidden" />
+    </div>
+    <div class="form-group">
+        <label for="Ad">Ad:</label>
+        <input type="text" class="form-control" id="Ad" name="Ad" value="@Model.Ad">
+    </div>
+    <div class="form-group">
+        <label for="Soyad">Soyad:</label>
+        <input type="text" class="form-control" id="Soyad" name="Soyad" value="@Model.Soyad">
+    </div>
+    <div class="form-group">
+        <label for="IlacAdi">İlaç:</label>
+        <input type="text" class="form-control" id="IlacAdi" name="IlacAdi" value="@Model.Ilaclar">
+    </div>
+    <div class="form-group">
+        <label for="KullaniciAdi">Kullanıcı Adı:</label>
+        <input type="text" class="form-control" id="KullaniciAdi" name="KullaniciAdi" value="@Model.KullaniciAdi">
+    </div>
+    <div class="form-group">
+        <label for="Sifre">Şifre:</label>
+        <input type="text" class="form-control" id="Sifre" name="Sifre" value="@Model.Sifre">
+    </div>
+    <button type="submit" class="btn btn-primary">Kaydet</button>
+</form>

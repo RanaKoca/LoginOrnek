@@ -1,0 +1,62 @@
+﻿@model List<Hasta>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>İlaç</th>
+            <th>Kullanıcı Adı</th>
+            <th>Şifre</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hasta in Model)
+        {
+            <tr>
+                <td>@hasta.id</td>
+                <td>@hasta.Ad</td>
+                <td>@hasta.Soyad</td>
+                <td>@hasta.IlacAdi</td>
+                <td>@hasta.KullaniciAdi</td>
+                <td>@hasta.Sifre</td>
+                <td>
+                    <button class="btn btn-success edit-user" data-id="@hasta.id">Güncelle</button>
+                    <button class="btn btn-danger delete-user" data-id="@hasta.id">Sil</button>
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
+<div id="editUserModalContainer"></div>
+<div id="deleteUserModalContainer"></div>
+@section Scripts {
+    <script>
+        $(function () {
+            $('.edit-user').click(function () {
+                var userId = $(this).data('id');
+                var url = '/Admin/EditUserBul/' + userId;
+
+                // Partial view'i çağır ve modal pencerede göster
+                $.get(url, function (data) {
+                    $('#editUserModalContainer').html(data);
+                    $('#editUserModal').modal('show');
+                });
+            });
+        });
+
+        $(function () {
+            $('.delete-user').click(function () {
+                var userId = $(this).data('id');
+                var url = '/Admin/DeleteUserBul/' + userId;
+
+                // Partial view'i çağır ve modal pencerede göster
+                $.get(url, function (data) {
+                    $('#deleteUserModalContainer').html(data);
+                    $('#deleteUserModal').modal('show');
+                });
+            });
+        });
+    </script>
+}

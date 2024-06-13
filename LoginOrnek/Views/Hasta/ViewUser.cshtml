@@ -1,0 +1,21 @@
+﻿@model List<Hasta>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Ad</th>
+            <th>Soyad</th>
+            <th>İlaç</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var hasta in Model)
+        {
+            <tr>
+                <td>@hasta.Ad</td>
+                <td>@hasta.Soyad</td>
+                <td>@hasta.IlacAdi</td>
+            </tr>
+        }
+    </tbody>
+</table>
